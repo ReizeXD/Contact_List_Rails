@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,7 +14,10 @@ Rails.application.routes.draw do
   #Declarando rotas para as páginas estaticas
   get 'sobre', to:'static_pages#sobre'
   get 'contato', to:'static_pages#contato'
-  
+  get 'entrar', to: 'sessions#new'
+  post 'entrar', to: 'sessions#create'
+  delete 'sair', to: 'sessions#destroy'
+
   resources :contacts
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
 end
