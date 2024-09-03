@@ -30,31 +30,39 @@
         <li>
           <%= link_to 'Entrar', entrar_path %>
         </li>
-        <% else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <% else %>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
             bem vindo, <%= current_user.name %> <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu">
-            <li>
+          <ul class="dropdown-menu", arial-labelledby="navbarDropdown">
+            <li> <a class="dropdown-item" href="#"></a>
               <%= link_to 'Minha Pagina', current_user %>
             </li>
             <li>
-              <%= link_to 'Editar', '#' %>
+              <li> <a class="dropdown-item" href="#"></a>
+                <%= link_to 'Editar', '#' %>
             </li>
-            <li class="divider" role="separator"></li>
+            <li class="dropdown-divider" role="separator"></li>
             <li>
+              <li> <a class="dropdown-item" href="#"></a>
               <%= link_to 'Sair', sair_path, method: :delete %>
-            </li>
+            </li> 
           </ul>
+           
         </li>
       <% end %>
-      
-  
-      </ul>
+    </ul>
   
     </div>
   
-    </div>
+  </div>
   
   </nav>
+
+<!-- jQuery (necessário para os plugins JavaScript do Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Inclua o Popper.js antes do Bootstrap.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<!-- Inclua o Bootstrap.js -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
